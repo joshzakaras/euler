@@ -51,3 +51,13 @@ generate-fibonacci-upto-n 4
            '(drop-last generated-sequence)
             (recur (inc iter))))))
 generate-fibonacci-upto-n 4
+ (defn is-prime? [n]
+   (cond
+     (<= n 1) false
+     :else (let [sqrt-n (/ n n)]
+             (loop [factor 2]
+               (if (= 0 (rem n 2))
+                 false
+                 (recur (inc factor)))))))
+is-prime? 2
+exit
