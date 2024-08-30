@@ -61,3 +61,7 @@ generate-fibonacci-upto-n 4
                  (recur (inc factor)))))))
 is-prime? 2
 exit
+(def v [1 2 3])
+(def l (list 1 2 3))
+(conj v 4)
+(conj l 4)

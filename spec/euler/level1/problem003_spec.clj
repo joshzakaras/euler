@@ -11,8 +11,8 @@
 (describe "Euler Problem #3"
 
   (it "Checks if a number is prime"
-      (should= false (is-prime? 1))
-      (should= true (is-prime? 2))
+      (should-not  (is-prime? 1))
+      (should  (is-prime? 2))
       (should= true (is-prime? 3))
       (should= false (is-prime? 4))
       (should= true (is-prime? 5))

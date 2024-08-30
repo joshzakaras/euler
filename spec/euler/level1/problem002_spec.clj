@@ -27,8 +27,6 @@
     (should= 0 (euler-2 1))
     (should= 2 (euler-2 2))
     (should= 2 (euler-2 5))
-    (should= 4613732 (euler-2 4000000))
-    )
-  )
+    (should= 4613732 (euler-2 4000000))))
 
 (run-specs)
