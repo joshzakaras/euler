@@ -10,26 +10,17 @@
 
 (describe "Euler Problem #4"
 
-  (it "Converts the digits of n into a vector"
-    (should= [0] (digits 0))
-    (should= [1] (digits 1))
-    (should= [1 0] (digits 10))
-    (should= [1 1] (digits 11))
-    (should= [9 9] (digits 99))
-    (should= [1 0 0] (digits 100))
-    (should= [9 9 9] (digits 999))
-    (should= [1 5 4 2 4] (digits 15424)))
+  (it "Checks if a number is a palindrome"
+    (should (palindrome? 1))
+    (should-not (palindrome? 10))
+    (should (palindrome? 11))
+    (should (palindrome? 101))
+    (should (palindrome? 9009)))
 
-  (it "Should check if a number is a palindrome"
-    (should (is-palindrome? 0))
-    (should-not (is-palindrome? 10))
-    (should (is-palindrome? 11))
-    (should (is-palindrome? 101))
-    (should-not (is-palindrome? 1011))
-    (should (is-palindrome? 1001)))
-
-  (xit "Solves Euler 4"
-    (should= -1 (euler-4 1))))
+  (it "Finds the largest palindrome made from the product of two n-digit numbers"
+    (should= 9 (euler-4 1))
+    (should= 9009 (euler-4 2))
+    (should= 906609 (euler-4 3))))
 
 
 (run-specs)
