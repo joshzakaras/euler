@@ -5,6 +5,6 @@
 
 (defn euler-5 [n]
   (->> (iterate (partial + n) n)
-       (filter #(let [n-divisible-by? (partial divisible-by? %)]
-                  (every? n-divisible-by? (range 1 (inc n)))))
+       (filter #(let [partial-divisible-by? (partial divisible-by? %)]
+                  (every? partial-divisible-by? (range 1 (inc n)))))
        first))
