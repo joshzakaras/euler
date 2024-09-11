@@ -1,18 +1,15 @@
 (ns euler.level1.problem007)
 
 
-(defn first-odd-factor [n]
-  (->> (iterate (partial + 2) 3)
-       (take-while #(<= % n))
-       (filter #(= 0 (rem n %)))
-       first))
+(defn potential-factors [n]
+  (->> (cons 2 (iterate (partial + 2) 3))
+       (take-while #(<= (* % %) n))))
 
 (defn prime? [n]
-  (cond
-    (<= n 1) false
-    (= n 2) true
-    (even? n) false
-    :else (= n (first-odd-factor n))))
+  (if (<= n 1)
+    false
+    (->> (potential-factors n)
+         (every? #(pos? (mod n %))))))
 
 (defn euler-7 [n]
   (if (= n 1)
