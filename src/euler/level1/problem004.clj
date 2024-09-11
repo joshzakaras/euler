@@ -10,5 +10,4 @@
                y n-digit-numbers]
            (* x y))
          (filter palindrome?)
-         sort
-         last)))
+         (apply max))))
