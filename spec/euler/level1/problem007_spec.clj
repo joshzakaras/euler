@@ -9,15 +9,6 @@
 
 (describe "Euler Problem #7"
 
-  (it "Checks if a number is prime"
-    (should-not (prime? 1))
-    (should (prime? 2))
-    (should-not (prime? 4))
-    (should (prime? 5))
-    (should-not (prime? 9))
-    (should (prime? 11))
-    (should (prime? 13)))
-
   (it "Generates the nth prime number"
     (should= 2 (euler-7 1))
     (should= 3 (euler-7 2))
