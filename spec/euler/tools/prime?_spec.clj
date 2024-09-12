@@ -2,7 +2,7 @@
   (:require [speclj.core :refer :all]
             [euler.tools.prime? :refer :all]))
 
-(describe "Prime Number Checker"
+(describe "Prime Number Conditional"
           (it "Checks if a number is prime"
               (should-not (prime? 1))
               (should (prime? 2))
