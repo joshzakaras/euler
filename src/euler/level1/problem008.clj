@@ -2,7 +2,8 @@
 
 
 (defn sequence-to-array [sequence]
-  (map #(Character/digit % 10) (str sequence)))
+  (map (comp read-string str) (str sequence))
+  #_(map #(Character/digit % 10) (str sequence)))
 
 
 

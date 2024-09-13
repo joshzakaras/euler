@@ -1,6 +1,6 @@
-(ns euler.tools.prime?-spec
+(ns euler.tools.prime-helper-spec
   (:require [speclj.core :refer :all]
-            [euler.tools.prime? :refer :all]))
+            [euler.tools.prime-helper :refer :all]))
 
 (describe "Prime Number Conditional"
           (it "Checks if a number is prime"

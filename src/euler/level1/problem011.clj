@@ -37,7 +37,7 @@
         (for [row (reverse (range 1 (inc (get gridDimensions :y))))]
           (->> (range row)
                (map #(nth (nth formattedGrid %) (Math/abs (- % (dec row)))))))
-      (for [column (reverse (range 1 (get gridDimensions :x)))]
+        (for [column (reverse (range 1 (get gridDimensions :x)))]
           (->> (range column)
                (map #(nth (nth formattedGrid (- (dec (get gridDimensions :x)) (Math/abs (- % (dec column))))) (- (dec (get gridDimensions :x)) %)))))))))
 

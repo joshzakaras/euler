@@ -1,11 +1,9 @@
 (ns euler.level1.problem010
   (:require
-    [euler.tools.prime? :refer :all]))
+    [euler.tools.prime-helper :refer :all]))
 
 (defn primes-below-n [n]
-  (->> (for [x (cons 2 (iterate (partial + 2) 3))
-             :when (prime? x)]
-         x)
+  (->> (generate-primes)
        (take-while #(< % n))))
 
 (defn euler-10 [n]
