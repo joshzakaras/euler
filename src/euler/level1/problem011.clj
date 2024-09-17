@@ -35,9 +35,7 @@
        (reductions conj [])
        rest
        (map format-diagonal)
-       (drop-last)
-       (map reverse)
-       reverse))
+       (drop-last)))
 
 (defn left-diagonals-from-grid [grid]
   (concat
