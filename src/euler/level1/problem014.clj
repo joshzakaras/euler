@@ -3,7 +3,7 @@
 (defn collatz-sequence [n]
   (cond
     (= n 1) [1]
-    (zero? (rem n 2)) (cons n (collatz-sequence (/ n 2)))
+    (even? n) (cons n (collatz-sequence (/ n 2)))
     :else (cons n (collatz-sequence (inc (* n 3))))))
 
 (defn largest-collatz-under-n [n]

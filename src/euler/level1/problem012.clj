@@ -9,8 +9,7 @@
        (take-while #(<= (* % %) n))
        (filter #(zero? (rem n %)))
        (mapcat #(vector % (/ n %)))
-       distinct
-       sort))
+       distinct))
 
 (defn euler-12 [n]
   (->> (triangle-numbers)

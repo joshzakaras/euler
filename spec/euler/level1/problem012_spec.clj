@@ -28,7 +28,7 @@
 
   (it "generates the factors of n"
     (should= [1] (factors-of-n 1))
-    (should= [1 2 4] (factors-of-n 4)))
+    (should= #{1 2 4} (set (factors-of-n 4))))
 
   (it "Generates the first triangle number with greater than n divisors"
     (should= 3 (euler-12 1))

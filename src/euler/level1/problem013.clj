@@ -5,6 +5,7 @@
 (defn array-sum [array]
   (apply + array))
 
+
 (defn euler-13 [n string]
   (-> (string-to-number-sequence string)
       (array-sum)

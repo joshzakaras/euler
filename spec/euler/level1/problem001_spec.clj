@@ -11,16 +11,16 @@
 (describe "Euler Problem #1"
 
   (it "gets multiples of factor below n"
-      (should= [] (multiples-of-n 0 3))
-      (should= [] (multiples-of-n 3 3))
-      (should= [3] (multiples-of-n 4 3))
-      (should= [3] (multiples-of-n 5 3))
-      (should= [3] (multiples-of-n 6 3))
-      (should= [3 6] (multiples-of-n 7 3))
-      (should= [3 6] (multiples-of-n 8 3))
-      (should= [3 6] (multiples-of-n 9 3))
-      (should= [3 6 9] (multiples-of-n 10 3))
-      (should= [5] (multiples-of-n 10 5)))
+    (should= [] (multiples-under-n 0 3))
+    (should= [] (multiples-under-n 3 3))
+    (should= [3] (multiples-under-n 4 3))
+    (should= [3] (multiples-under-n 5 3))
+    (should= [3] (multiples-under-n 6 3))
+    (should= [3 6] (multiples-under-n 7 3))
+    (should= [3 6] (multiples-under-n 8 3))
+    (should= [3 6] (multiples-under-n 9 3))
+    (should= [3 6 9] (multiples-under-n 10 3))
+    (should= [5] (multiples-under-n 10 5)))
 
   (it "Solves #1"
       (should= 0 (euler-1 3))

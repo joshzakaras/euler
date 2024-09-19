@@ -20,8 +20,9 @@
 (defn columns-from-grid [grid]
   (if (empty? grid)
     []
-    (->> (range (count-grid-columns grid))
-         (map #(take-nth (count-grid-columns grid) (drop % (flatten grid)))))))
+    (let [number-of-columns (count-grid-columns grid)]
+      (->> (range number-of-columns)
+           (map #(take-nth number-of-columns (drop % (flatten grid))))))))
 
 (defn format-diagonal [unformatted-diagonal]
   (->> (reverse unformatted-diagonal)
@@ -35,25 +36,22 @@
        (reductions conj [])
        rest
        (map format-diagonal)
-       (drop-last)))
+       drop-last))
 
-(defn left-diagonals-from-grid [grid]
+(defn diagonals-from-grid [grid]
   (concat
     (map format-diagonal (rest (reductions conj [] grid)))
     (second-half-of-diagonals grid)
     ))
 
-(defn right-diagonals-from-grid [grid]
-  (->> (left-diagonals-from-grid (reverse grid))
-       (map reverse)
-       reverse))
-
 (defn get-n-adjacent-from-set [n set]
   (mapcat #(partition n 1 %) set))
 
 (defn euler-11 [n string]
-  (let [grid (format-grid string)]
-    (->> (conj [] grid (columns-from-grid grid) (left-diagonals-from-grid grid) (right-diagonals-from-grid grid))
+  (let [grid (format-grid string)
+        left-diagonals (diagonals-from-grid grid)
+        right-diagonals (->> grid reverse diagonals-from-grid)]
+    (->> (conj [] grid (columns-from-grid grid) left-diagonals right-diagonals)
          (mapcat #(get-n-adjacent-from-set n %))
          (map #(apply * %))
          (apply max))))

@@ -46,14 +46,9 @@
     (should= [[0 0 0] [1 1 1] [2 2 2]] (columns-from-grid [[0 1 2] [0 1 2] [0 1 2]])))
 
   (it "returns the left moving diagonals from a grid"
-    (should= [] (left-diagonals-from-grid []))
-    (should= [[0]] (left-diagonals-from-grid [[0]]))
-    (should= [[0] [1 2] [3]] (left-diagonals-from-grid [[0 1] [2 3]])))
-
-  (it "returns the right moving diagonals from a grid"
-    (should= [] (right-diagonals-from-grid []))
-    (should= [[0]] (right-diagonals-from-grid [[0]]))
-    (should= [[1] [0 3] [2]] (right-diagonals-from-grid [[0 1] [2 3]])))
+    (should= [] (diagonals-from-grid []))
+    (should= [[0]] (diagonals-from-grid [[0]]))
+    (should= [[0] [1 2] [3]] (diagonals-from-grid [[0 1] [2 3]])))
 
   (it "Finds the greatest product of n adjacent numbers in the same direction in the grid"
     (should= 0 (euler-11 1 "0"))
